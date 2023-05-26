@@ -19,8 +19,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    facebook: "https://www.facebook.com/profile.php?id=100092869620968",
+    github: "https://github.com/vincemoke66/keyper-frontend",
+    docs: "https://github.com/vincemoke66/keyper-frontend",
   },
 }
