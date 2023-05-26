@@ -309,10 +309,7 @@ async function getData(): Promise<Record[]> {
     room: item.RoomName,
     building: item.BuildingName,
     type: item.type,
-    datetime: {
-      date: new Date(item.CreatedAt).toLocaleDateString(),
-      time: new Date(item.CreatedAt).toLocaleTimeString(),
-    },
+    datetime: new Date(item.CreatedAt),
   }))
 
   console.log(formattedData)

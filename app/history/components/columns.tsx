@@ -22,10 +22,7 @@ export type Record = {
   room: string
   building: string
   type: "return" | "borrow"
-  datetime: {
-    date: Date
-    time: Date
-  }
+  datetime: Date
 }
 
 export const columns: ColumnDef<Record>[] = [
@@ -154,10 +151,13 @@ export const columns: ColumnDef<Record>[] = [
 
       const datetime = datetimestruct
 
-      datetime.value =
-        row.getValue("datetime").date + " " + row.getValue("datetime").time
-      datetime.label =
-        row.getValue("datetime").date + " " + row.getValue("datetime").time
+      const rawDateTime: Date = row.getValue("datetime")
+
+      const stringDate = rawDateTime.toLocaleDateString()
+      const stringTime = rawDateTime.toLocaleTimeString()
+
+      datetime.value = stringDate + " " + stringTime
+      datetime.label = stringDate + " " + stringTime
 
       if (!datetime) {
         return null
