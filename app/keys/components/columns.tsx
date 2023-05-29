@@ -95,6 +95,9 @@ export const columns: ColumnDef<Key>[] = [
 
       return (
         <div className="flex items-center">
+          {floor.icon && (
+            <floor.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+          )}
           <span>{floor.label}</span>
         </div>
       )
