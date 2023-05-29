@@ -2,7 +2,7 @@ import { Key, columns } from "./components/columns"
 import { DataTable } from "./components/data-table"
 
 async function getData(): Promise<Key[]> {
-  const url = "http://192.168.101.77:8080/api/key"
+  const url = "http://192.168.147.250:8080/api/key"
 
   const response = await fetch(url, { cache: "no-store" })
   const responseData = await response.json()

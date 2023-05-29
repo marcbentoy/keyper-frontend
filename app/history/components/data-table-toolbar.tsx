@@ -6,7 +6,7 @@ import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-import { buildings, rooms, types } from "../data/data"
+import { buildings, types } from "../data/data"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"
 import { DataTableViewOptions } from "./data-table-view-options"
 
@@ -24,6 +24,15 @@ export function DataTableToolbar<TData>({
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
+        <Input
+          placeholder="Search for a room"
+          value={(table.getColumn("room")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("room")?.setFilterValue(event.target.value)
+          }
+          className="h-8 w-[150px] lg:w-[250px]"
+        />
+
         {table.getColumn("type") && (
           <DataTableFacetedFilter
             column={table.getColumn("type")}
@@ -37,14 +46,6 @@ export function DataTableToolbar<TData>({
             column={table.getColumn("building")}
             title="Buildings"
             options={buildings}
-          />
-        )}
-
-        {table.getColumn("room") && (
-          <DataTableFacetedFilter
-            column={table.getColumn("room")}
-            title="Rooms"
-            options={rooms}
           />
         )}
 

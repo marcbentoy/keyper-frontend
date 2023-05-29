@@ -11,7 +11,7 @@ import {
 
 import { Button } from "@/components/ui/button"
 
-import { buildings, rooms, types } from "../data/data"
+import { buildings, types } from "../data/data"
 import { DataTableColumnHeader } from "./data-table-column-header"
 
 // This type is used to define the shape of our data.
@@ -88,27 +88,8 @@ export const columns: ColumnDef<Record>[] = [
   {
     accessorKey: "room",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Rooms" />
+      <DataTableColumnHeader column={column} title="Room" />
     ),
-    cell: ({ row }) => {
-      const room = rooms.find((room) => room.value === row.getValue("room"))
-
-      if (!room) {
-        return null
-      }
-
-      return (
-        <div className="flex items-center">
-          {room.icon && (
-            <room.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{room.label}</span>
-        </div>
-      )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
-    },
   },
   {
     accessorKey: "building",
