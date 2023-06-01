@@ -11,9 +11,6 @@ export default function IndexPage() {
           Made with 💖 <br className="hidden sm:inline" />
           by CpE 3N
         </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          The quick brown fox jumps over the lazy dog.
-        </p>
       </div>
       <div className="flex gap-4">
         <Link

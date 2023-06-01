@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button"
 
 import { buildings, types } from "../data/data"
 import { DataTableColumnHeader } from "./data-table-column-header"
+import { format } from "date-fns"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -132,13 +133,10 @@ export const columns: ColumnDef<Record>[] = [
 
       const datetime = datetimestruct
 
-      const rawDateTime: Date = row.getValue("datetime")
+      const formattedTime = format(new Date(row.getValue("datetime")), "MM/dd/yyyy h:mm:ss a")
 
-      const stringDate = rawDateTime.toLocaleDateString()
-      const stringTime = rawDateTime.toLocaleTimeString()
-
-      datetime.value = stringDate + " " + stringTime
-      datetime.label = stringDate + " " + stringTime
+      datetime.value = formattedTime
+      datetime.label = formattedTime
 
       if (!datetime) {
         return null
