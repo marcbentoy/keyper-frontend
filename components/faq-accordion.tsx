@@ -17,11 +17,12 @@ export function FAQAccordion() {
       </AccordionItem>
       <AccordionItem value="item-2">
         <AccordionTrigger>
-          Can I borrow key if I don't have or I don't bring my student ID?
+          Can I borrow key if I don&#39;t have or I don&#39;t bring my student
+          ID?
         </AccordionTrigger>
         <AccordionContent>
-          No, you can't. Your school ID is what we use to gather information to
-          be logged on our database.
+          No, you can&#39;t. Your school ID is what we use to gather information
+          to be logged on our database.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
